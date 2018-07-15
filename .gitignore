@@ -3,5 +3,5 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-public/
+#public/ #注释掉此处
 .deploy*/
