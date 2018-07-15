@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: kylincat's blog
 subtitle:
 description:
 keywords:
 author: John Doe
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -74,8 +74,10 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-#theme: maupassant
-theme: cactus
+theme: maupassant
+#theme: cactus
+#theme_config:
+#  colorscheme: white
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
