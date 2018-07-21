@@ -1,3 +1,10 @@
+---
+title: 公司和家里代码文件同步方案: (git和dropbox实现)
+date:   2018-07-21 11:41:48
+tags: git sync mackbook
+categories: "2018-07-21"
+---
+
 # 公司和家里代码文件同步方案: (git和dropbox实现)
 
 > 参与公司福利购入了有补贴的macbook pro后, 就不用上下班背着电脑了.
