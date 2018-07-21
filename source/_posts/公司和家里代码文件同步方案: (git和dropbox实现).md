@@ -1,7 +1,7 @@
 ---
-title: 公司和家里代码文件同步方案: (git和dropbox实现)
-date:   2018-07-21 11:41:48
-tags: git sync mackbook
+title: "公司和家里代码文件同步方案: (git和dropbox实现)"
+date: 2018-07-21 11:41:48
+tags: git
 categories: "2018-07-21"
 ---
 
