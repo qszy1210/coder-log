@@ -7,7 +7,7 @@ title: kylincat's blog
 subtitle:
 description:
 keywords:
-author: John Doe
+author: 张青松
 language: zh-CN
 timezone:
 
@@ -73,7 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: maupassant
+theme: next
+# theme: maupassant
 # theme: maupassant
 #theme: cactus
 #theme_config:
