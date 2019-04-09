@@ -1,0 +1,39 @@
+---
+title: javascript 中的方法注入
+date:  2019-04-09
+tags: javascript
+categories: "2019-04"
+---
+
+
+# js 中的方法注入
+
+java中很多框架支持 apo 的注入, js中也可以类似的进行实现
+
+主要是通过扩展js中方法的**老祖** Function 对象来进行实现.
+
+```
+Function.prototype.after = function(foo) {
+    const thiz = this;
+    return function(...args) {
+         thiz.apply(thiz, args);
+         foo.apply(thiz, args);
+
+    }
+}
+
+//test
+function test(param) {
+    console.log("do");
+}
+
+function doAfter(param) {
+    console.log("doAfter");
+}
+
+const doWithAfter = test.after(doAfter);
+
+
+
+```
+

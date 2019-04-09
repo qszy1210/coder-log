@@ -1,0 +1,19 @@
+---
+title: 一个禁用mac内置键盘的方法
+date:  2019-04-09
+tags: mac keyboard karabiner
+categories: "2019-04"
+---
+
+# 一个禁用mac内置键盘的方法
+
+强大的 karabiner, 非常好用.
+可以直接在有外接键盘连接的情况下, 禁用掉内置键盘
+另外一个方法是启用mac的 鼠标键, 感觉用处不是很大, 修饰健并没有被禁用掉.
+这样我就可以愉快的放在我的mac笔记本上干活了.~~
+
+
+参考地址如下:
+http://www.mackungfu.org/cat-proofing-a-macbook-keyboard
+
+主要操作界面记录一下: (看下方的操作)

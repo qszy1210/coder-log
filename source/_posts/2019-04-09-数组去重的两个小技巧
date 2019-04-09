@@ -1,0 +1,49 @@
+---
+title: 数组去重的两个小技巧
+date:  2019-04-09
+tags: array javascript unique
+categories: "2019-04"
+---
+
+# 数组去重的两个小技巧
+
+## 首先es6有提供了 Set 对象, 同java中的 Set, set中的值不可以重复.
+
+所以对于一个数组我们可以直接采用
+
+```
+const duplicateArr = [2,3,4,4,4,3];
+const newArray = [...new Set(duplicateArr)];
+console.log(newArray);
+```
+
+## 可以采用filter函数进行过滤, 查看index 是否跟当前的index一致. 因为indexOf返回的是第一个查找的位置
+
+```
+const duplicateArr = [2,3,4,4,4,3];
+const newArray = duplicateArr.filter((value,index,arr)=>{
+    return arr.indexOf(value) === index;
+    //或者
+    //return arr.findIndex(value) === index;
+})
+console.log(newArray);
+```
+
+## 可以采用Object中的key值不重复的特性, 这种方法比较一些简单数组, 因为Object.keys中的key默认都为字符串
+
+```
+const duplicateArr = [2,3,4,4,4,3];
+const newObject = {};
+for(let i in duplicateArr) {
+    if (!newObject[duplicateArr[i]]){
+        newObject[duplicateArr[i]] = 1;//只是记录一下
+    }
+    else {
+    //这里也可以增加计数类的处理
+    }
+}
+console.log(Object.keys(newObject));
+
+```
+
+

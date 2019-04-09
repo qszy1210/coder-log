@@ -1,0 +1,51 @@
+---
+title: 使用 gitstats 来统计代码
+date:  2019-04-09
+tags: gitstatus
+categories: "2019-04"
+---
+
+# 使用 gitstats 来统计代码
+
+github地址如下
+
+[gitstats](https://github.com/hoxu/gitstats)
+
+clone地址
+
+```
+git clone https://github.com/hoxu/gitstats && cd $_
+
+```
+
+比如我的项目地址为 /Users/username/project
+生成的地址为  /Users/username/project-git-result
+
+
+```
+gitstats /Users/username/project  /Users/username/project-git-result
+```
+
+可能会提示(我的为 mac os)
+
+```
+env: python2: No such file or directory
+```
+可以进行 python2 的链接
+
+
+```
+sudo ln -sf /usr/bin/python2.7 /usr/local/bin/python2
+```
+
+如果没有安装 gunplot, 需要进行安装
+
+```
+brew install gnuplot
+```
+
+然后执行刚才的 gitstats 命令即可
+
+
+
+
