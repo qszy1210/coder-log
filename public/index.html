@@ -96,7 +96,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="kylincat&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://kylincat.com/index.html">
 <meta property="og:site_name" content="kylincat&#39;s blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://kylincat.com/"/>
 
 
 
@@ -270,12 +270,1049 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2019/03/11/2019-03-11/">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-数组去重的两个小技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张青松">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-数组去重的两个小技巧/" itemprop="url">数组去重的两个小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组去重的两个小技巧"><a href="#数组去重的两个小技巧" class="headerlink" title="数组去重的两个小技巧"></a>数组去重的两个小技巧</h1><h2 id="首先es6有提供了-Set-对象-同java中的-Set-set中的值不可以重复"><a href="#首先es6有提供了-Set-对象-同java中的-Set-set中的值不可以重复" class="headerlink" title="首先es6有提供了 Set 对象, 同java中的 Set, set中的值不可以重复."></a>首先es6有提供了 Set 对象, 同java中的 Set, set中的值不可以重复.</h2><p>所以对于一个数组我们可以直接采用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const duplicateArr = [2,3,4,4,4,3];</span><br><span class="line">const newArray = [...new Set(duplicateArr)];</span><br><span class="line">console.log(newArray);</span><br></pre></td></tr></table></figure>
+<h2 id="可以采用filter函数进行过滤-查看index-是否跟当前的index一致-因为indexOf返回的是第一个查找的位置"><a href="#可以采用filter函数进行过滤-查看index-是否跟当前的index一致-因为indexOf返回的是第一个查找的位置" class="headerlink" title="可以采用filter函数进行过滤, 查看index 是否跟当前的index一致. 因为indexOf返回的是第一个查找的位置"></a>可以采用filter函数进行过滤, 查看index 是否跟当前的index一致. 因为indexOf返回的是第一个查找的位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const duplicateArr = [2,3,4,4,4,3];</span><br><span class="line">const newArray = duplicateArr.filter((value,index,arr)=&gt;&#123;</span><br><span class="line">    return arr.indexOf(value) === index;</span><br><span class="line">    //或者</span><br><span class="line">    //return arr.findIndex(value) === index;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(newArray);</span><br></pre></td></tr></table></figure>
+<h2 id="可以采用Object中的key值不重复的特性-这种方法比较一些简单数组-因为Object-keys中的key默认都为字符串"><a href="#可以采用Object中的key值不重复的特性-这种方法比较一些简单数组-因为Object-keys中的key默认都为字符串" class="headerlink" title="可以采用Object中的key值不重复的特性, 这种方法比较一些简单数组, 因为Object.keys中的key默认都为字符串"></a>可以采用Object中的key值不重复的特性, 这种方法比较一些简单数组, 因为Object.keys中的key默认都为字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const duplicateArr = [2,3,4,4,4,3];</span><br><span class="line">const newObject = &#123;&#125;;</span><br><span class="line">for(let i in duplicateArr) &#123;</span><br><span class="line">    if (!newObject[duplicateArr[i]])&#123;</span><br><span class="line">        newObject[duplicateArr[i]] = 1;//只是记录一下</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">    //这里也可以增加计数类的处理</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(Object.keys(newObject));</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-关于ShadowSocks连接Dropbox设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-关于ShadowSocks连接Dropbox设置/" itemprop="url">关于ShadowSocks连接Dropbox设置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="关于ShadowSocks连接Dropbox设置"><a href="#关于ShadowSocks连接Dropbox设置" class="headerlink" title="关于ShadowSocks连接Dropbox设置"></a>关于ShadowSocks连接Dropbox设置</h1><blockquote>
+<p>使用中突然发现dropbox不能连接, 以为是dropbox中的代理有问题了.<br>设置后发现与 ss 的代理并没有问题. 经过反复跟踪才发现了问题<br>特记录一下解决方法</p>
+</blockquote>
+<p>直接给结论:</p>
+<p>发现我 ss 服务器的端口让给”科学” 了, 我是自己搭建的 vpn, 所以可以自己设置地址. 如果其他同学遇到类似的问题, 也可以参照一下.</p>
+<p>比如我原来的默认的  ss 服务器的地址是 443, 我给更改了一个其他的地址 4433, 然后就可以了.</p>
+<p>需要注意的是有可能你设置的新地址也不能用, 多尝试几次. 可能你服务器的多个 端口都被 “科学” 了.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-使用 gitstats 来统计代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-使用 gitstats 来统计代码/" itemprop="url">使用 gitstats 来统计代码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用-gitstats-来统计代码"><a href="#使用-gitstats-来统计代码" class="headerlink" title="使用 gitstats 来统计代码"></a>使用 gitstats 来统计代码</h1><p>github地址如下</p>
+<p><a href="https://github.com/hoxu/gitstats" target="_blank" rel="noopener">gitstats</a></p>
+<p>clone地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hoxu/gitstats &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
+<p>比如我的项目地址为 /Users/username/project<br>生成的地址为  /Users/username/project-git-result</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitstats /Users/username/project  /Users/username/project-git-result</span><br></pre></td></tr></table></figure>
+<p>可能会提示(我的为 mac os)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env: python2: No such file or directory</span><br></pre></td></tr></table></figure>
+<p>可以进行 python2 的链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /usr/bin/python2.7 /usr/local/bin/python2</span><br></pre></td></tr></table></figure>
+<p>如果没有安装 gunplot, 需要进行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gnuplot</span><br></pre></td></tr></table></figure>
+<p>然后执行刚才的 gitstats 命令即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-一个禁用mac内置键盘的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-一个禁用mac内置键盘的方法/" itemprop="url">一个禁用mac内置键盘的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一个禁用mac内置键盘的方法"><a href="#一个禁用mac内置键盘的方法" class="headerlink" title="一个禁用mac内置键盘的方法"></a>一个禁用mac内置键盘的方法</h1><p>强大的 karabiner, 非常好用.<br>可以直接在有外接键盘连接的情况下, 禁用掉内置键盘<br>另外一个方法是启用mac的 鼠标键, 感觉用处不是很大, 修饰健并没有被禁用掉.<br>这样我就可以愉快的放在我的mac笔记本上干活了.~~</p>
+<p>参考地址如下:<br><a href="http://www.mackungfu.org/cat-proofing-a-macbook-keyboard" target="_blank" rel="noopener">http://www.mackungfu.org/cat-proofing-a-macbook-keyboard</a></p>
+<p>主要操作界面记录一下: (看下方的操作)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-linux grep 查询多行的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-linux grep 查询多行的方法/" itemprop="url">linux grep 查询多行的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="linux-grep-查询多行的方法"><a href="#linux-grep-查询多行的方法" class="headerlink" title="linux grep 查询多行的方法"></a>linux grep 查询多行的方法</h3><p>经常查询 git log 中使用的方法, 如下</p>
+<p>git log |grep “xxxx”</p>
+<p>如果想查询多行的话, 就有些尴尬, 如果想查询多行的话, 方法如下:</p>
+<p>//查询上下<br>git log |grep “xxxx” -C 5</p>
+<p>//查询往后 after<br>git log |grep “xxxx” -A 5</p>
+<p>//查询往前 before<br>git log |grep “xxxx” -B 5</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-js 中的方法注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-js 中的方法注入/" itemprop="url">javascript 中的方法注入</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="js-中的方法注入"><a href="#js-中的方法注入" class="headerlink" title="js 中的方法注入"></a>js 中的方法注入</h1><p>java中很多框架支持 apo 的注入, js中也可以类似的进行实现</p>
+<p>主要是通过扩展js中方法的<strong>老祖</strong> Function 对象来进行实现.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.after = function(foo) &#123;</span><br><span class="line">    const thiz = this;</span><br><span class="line">    return function(...args) &#123;</span><br><span class="line">         thiz.apply(thiz, args);</span><br><span class="line">         foo.apply(thiz, args);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//test</span><br><span class="line">function test(param) &#123;</span><br><span class="line">    console.log(&quot;do&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function doAfter(param) &#123;</span><br><span class="line">    console.log(&quot;doAfter&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const doWithAfter = test.after(doAfter);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/04/09/2019-04-09-git代码统计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kylincat's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/qingsong/2019/04/09/2019-04-09-git代码统计/" itemprop="url">git代码统计</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T00:00:00+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qingsong/categories/2019-04/" itemprop="url" rel="index">
+                    <span itemprop="name">2019-04</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="git代码统计"><a href="#git代码统计" class="headerlink" title="git代码统计"></a>git代码统计</h1><p>查看git上个人代码量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --author=&quot;张青松&quot; --pretty=tformat: --numstat | awk &apos;&#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&apos; -</span><br></pre></td></tr></table></figure>
+<p>统计每一个人的代码量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --format=&apos;%aN&apos; | sort -u | while read name; do echo -en &quot;$name\t&quot;; git log --author=&quot;$name&quot; --pretty=tformat: --numstat | awk &apos;&#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&apos; -; done</span><br></pre></td></tr></table></figure>
+<p>查看仓库提交者排名前5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=&apos;%aN&apos; | sort | uniq -c | sort -k1 -n -r | head -n 5</span><br></pre></td></tr></table></figure>
+<p>贡献值统计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=&apos;%aN&apos; | sort -u | wc -l</span><br></pre></td></tr></table></figure>
+<p>提交数统计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --oneline | wc -l</span><br></pre></td></tr></table></figure>
+<p>添加或修改的代码行数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --stat|perl -ne &apos;END &#123; print $c &#125; $c += $1 if /(\d+) insertions/&apos;</span><br></pre></td></tr></table></figure>
+<p>参考地址:</p>
+<p><a href="https://segmentfault.com/a/1190000008542123" target="_blank" rel="noopener">git代码统计</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/03/11/2019-03-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张青松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -425,12 +1462,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2019/03/09/2019-03-09/">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2019/03/09/2019-03-09/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张青松">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -576,12 +1613,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/08/04/2018-08-04-js隐士转换/">
+    <link itemprop="mainEntityOfPage" href="http://kylincat.com/qingsong/2018/08/04/2018-08-04-js隐士转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张青松">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
+      <meta itemprop="image" content="/qingsong/images/head.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -718,918 +1755,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/08/04/2018-08-04-js数组删除多个元素的方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/08/04/2018-08-04-js数组删除多个元素的方法/" itemprop="url">js数组删除多个元素的方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T18:12:49+08:00">
-                2018-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-08/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-08</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数组删除多个元素的方法"><a href="#数组删除多个元素的方法" class="headerlink" title="数组删除多个元素的方法"></a>数组删除多个元素的方法</h1><ol>
-<li>逆向排查删除</li>
-</ol>
-<p>采用 splice方法, 正向删除是不可能的了, 这辈子都不可能的了, 因为删除后会引起数组的长度和index的变化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4,4,5];</span><br><span class="line">const target = 4;</span><br><span class="line">for(let index = arr.length -1; index &gt; 0; index--) &#123;</span><br><span class="line">    if (arr[index] === target) &#123;</span><br><span class="line">        arr.splice(index, 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>filter方法进行查询</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,4,5];</span><br><span class="line">arr = arr.filter(item=&gt;item!==4);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/08/04/2018-08-04-vim四大模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/08/04/2018-08-04-vim四大模式/" itemprop="url">vim的四大模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T18:12:01+08:00">
-                2018-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-08/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-08</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="vim的四大模式"><a href="#vim的四大模式" class="headerlink" title="vim的四大模式"></a>vim的四大模式</h1><p>总结了下我经常使用的模式中的一些基本命令</p>
-<ol>
-<li>正常模式<br> 通过vim进入到界面, 首次即为正常模式</li>
-<li>编辑模式 (i,a,o,s,I,A,S)<br> i: 当前节点插入光标点<br> a: 下一个字母后插入光标点<br> o: 下一行插入光标点<br> s: 删除当前的字母,并放置光标插入点<br> I: 行首插入光标点<br> A: 行尾插入光标点<br> S: 删除本行并插入光标点</li>
-<li>命令模式 (:) d删除 y黏贴 p复制 v选择-就是视图模式<br> 通过在正常模式下输入冒号 (:) 进入命令模式</li>
-<li>视图模式 (Shift+V 行选择, Ctrl+V 列选择)</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/08/04/2018-08-04-印象笔记作为todo(GTD相关)的一个尝试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/08/04/2018-08-04-印象笔记作为todo(GTD相关)的一个尝试/" itemprop="url">印象笔记 vs todo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T18:11:26+08:00">
-                2018-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-08/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-08</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="印象笔记作为todo-GTD相关-的一个尝试"><a href="#印象笔记作为todo-GTD相关-的一个尝试" class="headerlink" title="印象笔记作为todo(GTD相关)的一个尝试"></a>印象笔记作为todo(GTD相关)的一个尝试</h1><p>上来说结果: 失败</p>
-<p>原则上的原因: 印象笔记作为一个比较重的笔记, 重点也不在于这一点, 虽然是可以新建清单之类的. 还是比较小巧的好一些.</p>
-<p>最后使用的软件为 wunderlist</p>
-<p>原因: 免费.</p>
-<p>曾经稍微重度使用 2Do, 奈何正版太贵, 内心有愧, 于是就不再继续使用.</p>
-<h2 id="曾今的尝试"><a href="#曾今的尝试" class="headerlink" title="曾今的尝试"></a>曾今的尝试</h2><p>通过 alfred 的 workflow 进行尝试, 相关的workflow 的确很强大. 比如 <a href="http://www.packal.org/" target="_blank" rel="noopener">Packal</a> 上的 evernote 搜索就有很多.</p>
-<p>但是通用的基本支持搜索 todo ,创建事项(<strong>但不能单独进行todo</strong>) 的创建. 可以告知一下.</p>
-<p>不方便进行查找和查看. 专门的事情还是专门去做吧. 如果专门的事情不是很多的话.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/07/21/2018-07-21-公司和家里代码文件同步方案: (git和dropbox实现)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/07/21/2018-07-21-公司和家里代码文件同步方案: (git和dropbox实现)/" itemprop="url">公司和家里代码文件同步方案: (git和dropbox实现)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-21T11:41:48+08:00">
-                2018-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-07/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-07</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="公司和家里代码文件同步方案-git和dropbox实现"><a href="#公司和家里代码文件同步方案-git和dropbox实现" class="headerlink" title="公司和家里代码文件同步方案: (git和dropbox实现)"></a>公司和家里代码文件同步方案: (git和dropbox实现)</h1><blockquote>
-<p>参与公司福利购入了有补贴的macbook pro后, 就不用上下班背着电脑了.<br>但是也出现了另外一问题: <strong>家里和公司代码同步的问题</strong><br>公司有同事用icloud进行同步代码. 这个方法也不错, icloud还是比较稳定的<br>apple自己的东西, 采用 icloud 的文件夹同步是一个解决方案.<br><strong>但是</strong> 作为一个前端开发, node_modules 中的文件真是是让人很心痛,<br>占据空间, 并且同步也会很浪费时间. 所以我也希望网盘能够实现这种过滤一样的<br>同步. </p>
-</blockquote>
-<p>鉴于以上的背景, 我没有太多研究同步的过滤. 不过 synology(群晖)的drive 倒是可以<br>设置的. 但是从公司到家里同步, 虽然有自己的 synology drive, 但是速度真的不行,<br>毕竟是走家里的上传网路, 借助 synology 的 connectId, 速度的连通并不是很快.</p>
-<p>经过网上查找, 以及自己的 git 的一些了解, 找到了一个比较可行的同步方案.</p>
-<h2 id="git-和-dropbox-配合同步-也可以是坚果云或者其他网盘-看亲们的喜好-你懂的…"><a href="#git-和-dropbox-配合同步-也可以是坚果云或者其他网盘-看亲们的喜好-你懂的…" class="headerlink" title="git 和 dropbox 配合同步(也可以是坚果云或者其他网盘, 看亲们的喜好, 你懂的…)"></a>git 和 dropbox 配合同步(也可以是坚果云或者其他网盘, 看亲们的喜好, 你懂的…)</h2><blockquote>
-<p> 这里需要稍微说一下git, git之所以随时随地在本机进行提交(这也是我认为的区别于svn<br>的一个很根本的地方), 就是因为git的分布式处理. 每一个有git的地方都可以作为服务器,<br>也可以作为客户端. 每一个有git的地方都是可以互相进行提交的(稍微简单设置).</p>
-</blockquote>
-<p>只需要简单的2步(比大象放进冰箱的步骤都少)</p>
-<ol>
-<li><p>将dropbox所同步的文件夹下新建git文件夹. 需要在对应的文件夹下执行</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init --bare # 创建一个空的git容器</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将自己的代码库文件提交到 dropbox 同步的文件夹下.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在自己的代码块文件夹下增加另外一个 remote, 同你原来增加的 origin</span><br><span class="line">git remote add dropbox [/your/dropbox/file]</span><br><span class="line">#需要同步的话, 只需要执行一下</span><br><span class="line">git push dropbox --all</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>其实跟操作原来的分支是一个样子的, 只不过是增加了一个远端服务器, 不过这个<strong>远端的服务器</strong><br>是在你自己的机器上的, 同步通过dropbox实现, 具体背书dropbox的太多了. 因为同步速度的确<br>很快, 当然前提是你可以访问dropbox.</p>
-<h2 id="其他的一些文件夹"><a href="#其他的一些文件夹" class="headerlink" title="其他的一些文件夹"></a>其他的一些文件夹</h2><p>其他文件夹可以不走git, 因为 dropbox 是可以通过<strong>软链接</strong>进行同步的. 我后来又想了下,<br>直接将文件放置在 dropbox 中就可以了. 然后在你需要的地方新建 dropbox 的软链接, 其实是一个样子的.</p>
-<blockquote>
-<p>后记:<br>因为我有公司的vpn, 可以通过公司的网络进行 node_modules 的安装, 当然 node_modules 也是<br>可以通过公网进行安装的. 这是额外说的一些.<br>其实直接通过同步云盘进行同步也是可以的. 但是我对 git 尤其喜欢. 所以就想了下, 通过 git 进行实现, 同时很多其他的文件也可以通过此种方案进行实现.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/07/15/2018-07-15-通过hexo更新阿里云网站步骤/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/07/15/2018-07-15-通过hexo更新阿里云网站步骤/" itemprop="url">hexo 部署到阿里云网站</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T02:52:33+08:00">
-                2018-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-07/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-07</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="通过hexo更新阿里云网站步骤"><a href="#通过hexo更新阿里云网站步骤" class="headerlink" title="通过hexo更新阿里云网站步骤"></a>通过hexo更新阿里云网站步骤</h1><p>由于我租用的服务器很便宜(199…),所以上传有限制, 并发数和一定时间内的传输数稍微一多,就挂了…<br>哎 没办法, 穷人家的孩子受欺负. 到期就更换吧.</p>
-<ol>
-<li>更改完对应的source文件后 <em>source 文件夹下的 _posts 下的 md 文件</em></li>
-<li><p>执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy --generate</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将public文件夹内容进行压缩</p>
-</li>
-<li>通过ftp工具, 我用的是 Transmit(mac下的) 传输到对应目录下, 单一压缩文件的传输就好很多.</li>
-<li>通过阿里云的主机管理工具进行解压, <strong>注意解压目录别错了</strong>, 如图</li>
-</ol>
-<p><img src="http://www.kylincat.com/static/QQ20180715-145437@2x.png" alt=""></p>
-<ol start="6">
-<li>解压完成后, 刷新页面即可</li>
-</ol>
-<p>如果不生效, 一般是因为 hexo 没有执行 deploy 导致的.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/qingsong/2018/07/15/2018-07-15-博客的开篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张青松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qingsong/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kylincat's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/qingsong/2018/07/15/2018-07-15-博客的开篇/" itemprop="url">博客的开篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T01:47:34+08:00">
-                2018-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qingsong/categories/2018-07/" itemprop="url" rel="index">
-                    <span itemprop="name">2018-07</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h1><p>三十而立, 我三十才刚正式开始北京生活. 一直想弄个博客, 折腾了好久, 才算是真正的要去搭建<br>一个博客了. 这里作为一个开篇说明, 会把自己以前积累的一点点东西拿过来. 希望可以有一些生活的记录.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/qingsong/page/2/">2</a><a class="extend next" rel="next" href="/qingsong/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1661,7 +1793,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/qingsong/images/avatar.gif"
+               src="/qingsong/images/head.jpeg"
                alt="张青松" />
           <p class="site-author-name" itemprop="name">张青松</p>
            
@@ -1673,7 +1805,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/qingsong/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">文章</span>
               </a>
             </div>
@@ -1684,7 +1816,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/qingsong/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1695,7 +1827,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/qingsong/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
