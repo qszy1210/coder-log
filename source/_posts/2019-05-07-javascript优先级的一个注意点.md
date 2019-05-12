@@ -42,6 +42,9 @@ if ((emptyObj && emptyObj.name) === "kylin") { //Uncaught ReferenceError: empty 
 
 ```
 
+附一个图片
+
+{% asset_img javascript-优先级.png %}
 
 
 
