@@ -67,7 +67,7 @@ microTask会阻碍页面的 render, render 是属于 macroTask;
 
 但是 setTimeout 不会;
 
-另外要注意 rAF 的使用, 这个是用来专门进行渲染使用的, 执行速度会
+另外要注意 rAF(requestAnimationFrame) 的使用, 这个是用来专门进行渲染使用的, 执行速度会
 比 setTimeout 少很多.
 
 
