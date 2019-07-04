@@ -2,6 +2,7 @@
 title: javacript中的进制标识
 date: 2019-05-20 10:05:21
 tags: 进制 二进制
+categories: "2019-05"
 ---
 
 # javacript中的进制标识
