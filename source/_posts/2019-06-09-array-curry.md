@@ -4,3 +4,7 @@ date: 2019-06-09 17:47:33
 tags: todo
 categories: "2019-06"
 ---
+
+# array curry
+
+
