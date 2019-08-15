@@ -40,8 +40,11 @@ parseInt(null)//0
 比如
 
 ```js
-var a = xxxx; //要增加 || 0 的判断
-if (a > b) {
+//var a = xxxx; //要增加 || 0 的判断
+//修改为
+const b = xxx || 0;
+const a = yyy || 0;
+if (a > b) {//这个时候不会因为 a 或者 b 为 undefined 导致判断失败
 
 }
 ```
