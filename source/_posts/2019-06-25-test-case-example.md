@@ -5,6 +5,6 @@ tags:
 categories: "2019-06"
 ---
 
-# 做一个前端你的测试 case
+# 做一个前端迷你的测试 case
 
 ## todo
