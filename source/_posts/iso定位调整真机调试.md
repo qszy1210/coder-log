@@ -4,7 +4,7 @@ date: 2019-09-12 10:37:50
 tags: iphone 真机调试
 ---
 
-## 小白在ihpone下的真机调试和定位路程
+## 小白在xcode下的真机(iphone)调试和定位路程
 
 1. 首先 xcode 新建一个项目
 2. 然后新建一个gpx文件, 待后边 debug -> simulator location 的时候选择使用
