@@ -2,4 +2,5 @@
 
 hexo deploy --generate;
 rm -rf qingsong
-mv public qingsong
+rm -rf tech
+mv public tech

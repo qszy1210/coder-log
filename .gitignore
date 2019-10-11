@@ -6,4 +6,5 @@ node_modules/
 #public/ #注释掉此处
 .deploy*/
 qingsong/
+tech/
 public/
