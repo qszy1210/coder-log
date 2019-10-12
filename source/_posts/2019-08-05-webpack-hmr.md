@@ -1,7 +1,12 @@
 ---
 title: 2019-08-05-webpack-hmr
 date: 2019-08-05 21:00:31
-tags: todo hmr webpack
+tags: hmr webpack
 ---
 
-# 学习一下webpack的原理
+## hmr 的基本思想
+
+- 建立通信
+- 监听变化
+- 比较
+- 通知更改
