@@ -1,7 +1,7 @@
 ---
 title: 2019-08-21-react-native-android-真机调试
 date: 2019-08-21 16:11:41
-tags: android react native todo
+tags: android react native todos
 ---
 
 ## react-native-android-真机调试

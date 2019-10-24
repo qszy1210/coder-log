@@ -1,7 +1,7 @@
 ---
 title: 2019-07-04-获取元素实际的css属性
 date: 2019-07-04 07:44:43
-tags: todo getComputedStyle cssText currentStyle
+tags: todos getComputedStyle cssText currentStyle
 categories: "2019-07"
 ---
 

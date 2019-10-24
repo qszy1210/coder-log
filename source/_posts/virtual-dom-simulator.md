@@ -1,7 +1,7 @@
 ---
 title: virtual-dom-simulator
 date: 2019-09-24 11:04:08
-tags: virtul-dom todo
+tags: virtul-dom todos
 ---
 
 ## 模拟一个简单的 virtual dom 的实现过程
