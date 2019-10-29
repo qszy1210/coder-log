@@ -10,4 +10,3 @@ tags: todos react lifecycle
 
 ---
 
-{% 图片here %}
