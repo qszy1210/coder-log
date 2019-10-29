@@ -1,5 +1,17 @@
 ---
 title: 框架设计solid
 date: 2019-10-18 15:25:01
-tags: todos
+tags: principle framework
 ---
+
+## solid 的意思
+
+### single responsibility principle 单一原则
+
+### open close principle 开闭原则
+
+### liskov substitution principle 里式替换原则
+
+### interface segeregation principle 接口隔离原则
+
+### dependency inversion principle 依赖倒置原则
