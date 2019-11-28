@@ -1,6 +1,6 @@
 ---
 title: virtual-dom-simulator
-date: 2019-09-24 11:04:08
+date: 2018-09-24 11:04:08
 tags: virtul-dom todos
 ---
 
