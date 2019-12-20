@@ -1,0 +1,49 @@
+---
+title: js中的表达式和声明
+tags:
+  - JavaScript
+  - 表达式
+  - 声明
+date: 2019-12-20 09:55:34
+---
+
+
+
+什么是表达式呢?
+按照<<你不知道的JavaScript>>中的说明, 最简单的是看 function 关键字出现的声明中的位置
+如果一个完整的语句中, function 前边有有效字符, 那么这个就是一个表达式, 否则就是一个声明
+
+比如匿名函数
+
+```javascript
+//这个 aaa 只在括号里边有效, 在括号外边是看不到的
+(function aaa(){
+
+})()
+
+console.log(aaa);//Uncaught ReferenceError: aaa is not defined
+```
+
+又比如:
+
+```javascript
+const test = function aaa(a) {console.log('xxx')}; (function test(a){console.log(a)})(1)
+//这个aaa 也只在后边的方法中可以进行调用, 在外边是看不到的
+console.log(aaa);//Uncaught ReferenceError: aaa is not defined
+```
+
+另外增加其他的一些特殊情况
+
+```javascript
+~function aaa() {};
+console.log(aaa);
+
+!function aaa() {};
+console.log(aaa);
+```
+
+上边的两种情况也是一样的, 都是表达式.
+
+## 总结
+
+第一种可以理解, 以前对第二种情况理解不深刻. 很多还是靠规则去推演. 直接的死记硬背是不太可靠的.
