@@ -1,7 +1,9 @@
 ---
 title: git-sub-modules
 tags: git submodules
+date: 2019-12-31 14:31:05
 ---
+
 
 ## git 管理多个子git - 学习
 
@@ -73,7 +75,15 @@ git submodule init
 
 ### 3.3 如何更新具体
 
+注意其中的 isActive 属性, 需要进行更改为 false 即可.
 
+### 问题处理 -- 乱起八糟
+
+```shell
+git ls-files --stage | grep 160000
+```
+地址:
+https://stackoverflow.com/questions/4185365/no-submodule-mapping-found-in-gitmodule-for-a-path-thats-not-a-submodule
 
 
 ### 参考地址
