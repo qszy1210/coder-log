@@ -1,0 +1,68 @@
+---
+title: TDZ
+tags: tdz es6
+---
+
+### 暂时性死区的 es5 实现
+
+一直很好奇es5的 shim 是怎么实现 let const 之类的语法的.
+
+因为
+
+```js
+console.log(a);
+let a = 5;//error!!!
+```
+
+上边的地方会直接报错,如果在 es5 的环境下
+
+```js
+cosnole.log(a);//undefijned
+var a = 5;
+```
+
+是不会报错的. 因为有一个上浮机制, 原来猜想也肯定要转化到类似方法的作用域下边
+
+但是一直不得其解.  看到了 "你不知道的JavaScript" 中给了答案, es5 中的
+
+try/catch 中 catch 是有一个大括号作用域的.
+
+如下:
+
+```js
+try {
+throw new Error('error');
+}
+catch(error){
+
+}
+```
+
+error 会接收 try 中抛出的错误, 这里的赋值对于外边来说是封闭的, 这个就造成了一个"死区"
+
+比如上边的实现
+
+```js
+console.log(a);
+try {
+    throw undefined
+}
+catch(a) {
+    a = 5;
+}
+```
+
+在 catch 作用域中对其进行赋值, 外边是访问不到这里的 a 的
+
+或者
+
+```js
+try {
+    throw 5
+}
+catch(a) {
+    //
+}
+```
+
+但是这个样子, 以后 let 的地方就要整理包裹在这里了. 所以感觉 es5 的实现也是很丑陋的.
