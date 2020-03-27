@@ -1,7 +1,9 @@
 ---
-title: mac-volumn-灰掉
+title: mac-volumn-灰掉的解决方法
+date: 2020-03-27 23:57:24
 tags:
 ---
+
 
 执行命令
 
