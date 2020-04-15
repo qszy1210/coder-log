@@ -1,8 +1,9 @@
 ---
 title: promise的es5实现
-date: 2018-11-21 22:58:54
 tags: promise
+date: 2018-11-21 22:58:54
 ---
+
 
 ## promise 的 es5 实现
 
