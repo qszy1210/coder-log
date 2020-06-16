@@ -52,7 +52,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 30
+  per_page: 5
   order_by: -date
 
 # Category & Tag
@@ -75,8 +75,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
-# theme: maupassant
+# theme: next
+theme: maupassant
 # theme: maupassant
 #theme: cactus
 #theme_config:
