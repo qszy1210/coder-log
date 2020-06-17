@@ -2,6 +2,7 @@
 title: git-sub-modules
 tags: git submodules
 date: 2019-12-31 14:31:05
+categories: "git"
 ---
 
 

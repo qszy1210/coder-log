@@ -2,6 +2,7 @@
 title: js-test
 date: 2020-05-22 15:51:21
 tags: mocha chai karma
+categories: "javascript"
 ---
 
 ## 测试高频使用的库

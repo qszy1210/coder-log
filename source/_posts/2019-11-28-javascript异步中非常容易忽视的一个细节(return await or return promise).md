@@ -2,7 +2,7 @@
 title: 2019-11-28-javascript异步中非常容易忽视的一个细节(return await or return promise)
 date: 2019-11-28 07:30:25
 tags: [javascript, async await, promise]
-categories: "2019-11"
+categories: "javascript"
 ---
 
 闲话少说, 先上代码

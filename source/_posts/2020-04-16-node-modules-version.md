@@ -2,6 +2,7 @@
 title: node_modules_version
 date: 2020-04-16 20:54:29
 tags: node npm node_modules_version
+categories: "node"
 ---
 
 ## node 中的各个版本

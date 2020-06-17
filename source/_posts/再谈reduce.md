@@ -2,6 +2,7 @@
 title: 再谈reduce
 date: 2020-04-17 15:59:02
 tags: javascript reduce
+categories: "javascript"
 ---
 
 ## 对于reduce的认识

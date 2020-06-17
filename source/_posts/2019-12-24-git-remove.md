@@ -2,6 +2,7 @@
 title: git-remove
 date: 2019-12-24 14:41:46
 tags:
+categories: "git"
 ---
 
 

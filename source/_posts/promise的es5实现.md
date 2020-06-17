@@ -2,6 +2,7 @@
 title: promise的es5实现
 tags: promise
 date: 2018-11-21 22:58:54
+categories: "javascript"
 ---
 
 

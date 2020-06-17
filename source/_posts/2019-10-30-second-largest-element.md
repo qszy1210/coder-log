@@ -2,7 +2,7 @@
 title: 2019-10-30-second-largest-element
 date: 2019-10-30 09:30:51
 tags:
-categories: '2019-10'
+categories: "algorithm"
 ---
 
 ## 获取第二大的元素

@@ -2,6 +2,7 @@
 title: 怎么将typescript应用到自己写的js文件中
 date: 2019-12-12 20:18:50
 tags:
+categories: "javascript"
 ---
 
 

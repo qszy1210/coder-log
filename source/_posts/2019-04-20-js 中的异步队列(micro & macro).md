@@ -2,7 +2,7 @@
 title: js 队列
 date:  2019-04-20
 tags: microtask 队列
-categories: "2019-04"
+categories: "javascript"
 ---
 
 # js 中的异步队列(micro & macro)

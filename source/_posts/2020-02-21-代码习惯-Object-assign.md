@@ -2,6 +2,7 @@
 title: 代码习惯-Object.assign
 tags: rules standard javascriopt
 date: 2020-02-21 10:13:22
+categories: "javascript"
 ---
 
 

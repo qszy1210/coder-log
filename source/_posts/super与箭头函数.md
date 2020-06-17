@@ -2,6 +2,7 @@
 title: super与箭头函数
 tags: function arrow
 date: 2020-04-14 08:55:30
+categories: "javascript"
 ---
 
 

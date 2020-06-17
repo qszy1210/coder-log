@@ -2,6 +2,7 @@
 title: 2019-07-16-flat-array
 date: 2019-07-16 20:14:30
 tags: array flat
+categories: "javascript"
 ---
 
 # 记录一个 concat 实现的数组 flat 方法

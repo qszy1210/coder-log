@@ -2,7 +2,7 @@
 title: 'Object prototype may only be an Object or null: undefined'
 date: 2019-06-06 14:23:29
 tags: error
-categories: "2019-06"
+categories: "issue"
 ---
 
 # Object prototype may only be an Object or null: undefined

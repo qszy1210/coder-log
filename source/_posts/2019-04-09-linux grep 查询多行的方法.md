@@ -2,7 +2,7 @@
 title: linux grep 查询多行的方法
 date:  2019-04-09
 tags: linux grep
-categories: "2019-04"
+categories: "linux"
 ---
 
 ### linux grep 查询多行的方法

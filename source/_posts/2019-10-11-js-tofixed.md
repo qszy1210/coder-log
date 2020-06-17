@@ -2,6 +2,7 @@
 title: 2019-10-11-js-tofixed
 date: 2019-10-11 15:25:46
 tags: tofixed math
+categories: "javascript"
 ---
 
 ## js 原生 toFixed 方法修正

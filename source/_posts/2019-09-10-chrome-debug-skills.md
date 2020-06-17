@@ -2,6 +2,7 @@
 title: 2019-09-10-chrome-debug-skills
 date: 2019-09-10 16:21:21
 tags: chrome debug
+categories: "chrome"
 ---
 
 ## chrome debug 中的 filter 技巧

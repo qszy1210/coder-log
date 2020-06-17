@@ -2,6 +2,7 @@
 title: 2019-08-22-android-client-crash-with-toLocaleDateString
 date: 2019-08-22 16:57:31
 tags: 2038year crash android
+categories: "mobile"
 ---
 
 

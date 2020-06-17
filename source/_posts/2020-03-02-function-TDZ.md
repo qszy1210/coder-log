@@ -2,6 +2,7 @@
 title: function-TDZ
 tags: tdz es6
 date: 2020-03-02 14:21:04
+categories: "javascript"
 ---
 
 

@@ -2,6 +2,7 @@
 title: 2019-08-01-souretree-cli
 date: 2019-08-01 14:28:11
 tags: sourcetree cli vscode webstorm
+categories: "tools"
 ---
 
 ## sourecetee cli

@@ -2,7 +2,7 @@
 title: 2019-10-29-css居中情况不完全整理
 date: 2019-10-29 21:01:48
 tags: middle css float margin
-categories: "2019-10"
+categories: "css"
 ---
 
 ## 整理集中 css 居中以及布局的情况

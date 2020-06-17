@@ -2,6 +2,7 @@
 title: leetcode-2
 date: 2020-04-30 09:46:52
 tags: leetcode
+categories: "algorithm"
 ---
 ## leetcode-2 自己的无参考实现
 

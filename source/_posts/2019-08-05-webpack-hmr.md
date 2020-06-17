@@ -2,6 +2,7 @@
 title: 2019-08-05-webpack-hmr
 date: 2019-08-05 21:00:31
 tags: hmr webpack
+categories: "node"
 ---
 
 ## hmr 的基本思想

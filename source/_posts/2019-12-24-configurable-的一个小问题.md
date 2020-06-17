@@ -2,6 +2,7 @@
 title: configurable-的一个小问题
 date: 2019-12-24 14:35:43
 tags:
+categories: "javascript"
 ---
 
 

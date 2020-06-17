@@ -2,7 +2,7 @@
 title: 关于ShadowSocks连接Dropbox设置
 date:  2019-04-09
 tags: shadowsocks dropbox
-categories: "2019-04"
+categories: "cloud"
 ---
 
 # 关于ShadowSocks连接Dropbox设置

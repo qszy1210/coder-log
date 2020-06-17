@@ -2,6 +2,7 @@
 title: node-sass-error
 date: 2020-04-16 21:33:28
 tags: node node-sass
+categories: "node"
 ---
 
 安装 node-sass 的时候

@@ -2,6 +2,7 @@
 title: function-scope
 tags: function-scope
 date: 2019-12-18 19:57:39
+categories: "javascript"
 ---
 
 

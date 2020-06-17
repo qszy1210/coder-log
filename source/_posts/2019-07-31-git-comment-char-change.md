@@ -2,6 +2,7 @@
 title: 2019-07-31-git-comment-char-change
 date: 2019-07-31 13:52:03
 tags: git comment
+categories: "git"
 ---
 
 # 更改默认git的注释符号

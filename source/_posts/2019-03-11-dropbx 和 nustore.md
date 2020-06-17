@@ -2,7 +2,7 @@
 title: dropbx 和 nustore
 date:  2019-03-11
 tags: cloud
-categories: "2019-03"
+categories: "cloud"
 ---
 
 # dropbox icloud and nustore

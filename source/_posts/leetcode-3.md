@@ -2,6 +2,7 @@
 title: leetcode-3
 date: 2020-04-30 13:42:51
 tags:
+categories: "algorithm"
 ---
 
 ## 获取最长字串

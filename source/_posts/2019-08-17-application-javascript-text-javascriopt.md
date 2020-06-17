@@ -2,6 +2,7 @@
 title: application/javascript+text/javascriopt
 date: 2019-08-17 15:52:17
 tags:
+categories: "http"
 ---
 
 ## 关于 mime 中的 application/javascript 和 text/javascript 的疑问

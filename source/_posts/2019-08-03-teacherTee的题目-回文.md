@@ -2,6 +2,7 @@
 title: 2019-08-03-teacherTee的题目-回文
 date: 2019-08-03 17:00:37
 tags: 回文 面试
+categories: "algorithm"
 ---
 
 # 一个关于回文的面试题目

@@ -2,7 +2,7 @@
 title: javascript优先级注意点
 date:  2019-05-06
 tags: javascript优先级
-categories: "2019-05-06"
+categories: "javascript"
 ---
 
 # javascript 优先级

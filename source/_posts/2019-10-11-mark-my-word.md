@@ -2,6 +2,7 @@
 title: 2019-10-11-mark-my-word
 date: 2019-10-11 09:24:30
 tags: mac touchbar
+categories: "mac"
 ---
 
 ## mark my word

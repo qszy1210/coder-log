@@ -2,6 +2,7 @@
 title: 数字大于undefiend么
 date: 2019-08-14 10:44:12
 tags: parseInt NaN
+categories: "javascript"
 ---
 
 # 数字大于undefiend么?

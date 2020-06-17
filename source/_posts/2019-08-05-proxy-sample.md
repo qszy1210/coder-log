@@ -2,6 +2,7 @@
 title: 2019-08-05-proxy-sample
 date: 2019-08-05 21:07:30
 tags:
+categories: "javascript"
 ---
 
 # 一个简单的proxy应用的例子

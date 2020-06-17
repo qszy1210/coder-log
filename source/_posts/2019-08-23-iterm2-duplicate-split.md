@@ -2,6 +2,7 @@
 title: 2019-08-23-iterm2-duplicate-split
 date: 2019-08-23 10:58:50
 tags: iterm2 duplicate
+categories: "linux"
 ---
 
 ## 设置 iterm2 新的tab 为当前tab的复制

@@ -2,6 +2,7 @@
 title: javascript-switch-equal
 tags: switch javascript
 date: 2019-12-17 19:25:46
+categories: "javascript"
 ---
 
 

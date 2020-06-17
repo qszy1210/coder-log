@@ -2,7 +2,7 @@
 title: 2019-06-25-关于git-cherry-pick的一个疑惑
 date: 2019-06-25 15:39:05
 tags:
-categories: "2019-06"
+categories: "git"
 ---
 
 # git cherry-pick 的一个疑惑
