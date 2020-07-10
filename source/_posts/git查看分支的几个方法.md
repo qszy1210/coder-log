@@ -38,6 +38,6 @@ git branch -a #列出所有的分支(远程和本地)
 
 ```shell
 git branch -a | grep xxx
-git branch -o xxx origin/xxx
+git checkout -b xxx origin/xxx
 ```
 
