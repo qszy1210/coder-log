@@ -10,9 +10,15 @@ date: 2019-12-03 18:42:37
 - 爱好: 跑步, 闲时做饭
 - 格言: 正视自己 整理自己 改进自己
 
+## 其他地址
+
+cnblog: [一些随笔](https://www.cnblogs.com/asdfq/)
+github: [github](https://github.com/qszy1210)
+gitee: [gitee主页](https://gitee.com/qs1210)  [gitee-vuepress-blog](http://qs1210.gitee.io/coder-log-vuepress/)
+
 ## 联系我
 
-邮箱:  <zhangqs86@163.com>  <asdfqs@163.com>
+邮箱:  <qingsongyz@163.com>  备用邮箱 <zhangqs86@163.com> <asdfqs@163.com>
 
 
 ## 关于博客
