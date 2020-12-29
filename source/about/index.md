@@ -18,7 +18,7 @@ gitee: [gitee主页](https://gitee.com/qs1210)  [gitee-vuepress-blog](http://qs1
 
 ## 联系我
 
-邮箱:  <qingsongyz@163.com>  备用邮箱 <zhangqs86@163.com> <asdfqs@163.com>
+邮箱:  <qingsongyz@163.com>
 
 
 ## 关于博客
