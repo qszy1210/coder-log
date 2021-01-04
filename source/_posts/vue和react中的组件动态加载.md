@@ -1,7 +1,7 @@
 ---
 title: vue和react中的组件动态加载
 date: 2020-12-30 09:26:20
-tags:
+tags: dynamic
 ---
 
 ## vue和react中的组件动态加载
