@@ -103,6 +103,30 @@ export default {
 </script>
 ```
 
+#### vue 中的另一种类似的实现方式
+
+```html
+
+<template>
+  <component v-if="dynamicComponent" :is="dynamicComponent"></component>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      dynamicComponent: null
+    }
+  },
+  mounted () {
+    import('./lib-that-access-window-on-import').then(module => {
+      this.dynamicComponent = module.default
+    })
+  }
+}
+</script>
+
+```
+
 ### react 的动态组件加载
 
 道理是一个样子的, 需要将其作为一个 state 属性进行传递, 触发 render.
